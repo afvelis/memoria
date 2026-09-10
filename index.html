@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Memoria y Cuenta · Comunidad Residencial</title>
+<style>
+  body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; font-size: 18px; line-height: 1.6; color: #111; background: #fff; margin: 0 auto; padding: 16px; max-width: 780px; }
+  h1 { font-size: 27px; line-height: 1.3; margin: 10px 0 4px; }
+  h2 { font-size: 24px; margin: 40px 0 8px; border-bottom: 4px solid #111; padding-bottom: 6px; }
+  h3 { font-size: 20px; margin: 0 0 8px; }
+  p { margin: 6px 0; }
+  nav { margin: 14px 0 6px; }
+  nav a { display: inline-block; background: #0b57d0; color: #fff; text-decoration: none; padding: 12px 18px; border-radius: 10px; margin: 4px 6px 4px 0; font-size: 18px; font-weight: bold; }
+  .resumen { background: #fff8e1; border: 3px solid #b26a00; border-radius: 12px; padding: 12px 18px; margin: 14px 0; }
+  .resumen p { margin: 6px 0; font-size: 19px; }
+  .anio { text-align: center; font-size: 21px; font-weight: bold; color: #444; letter-spacing: 3px; margin: 30px 0 8px; }
+  .item, .prop { border: 2px solid #111; border-radius: 12px; padding: 14px 18px; margin: 16px 0; background: #fafafa; }
+  .btn { display: inline-block; background: #0b57d0; color: #fff; text-decoration: none; padding: 12px 18px; border-radius: 10px; font-size: 18px; font-weight: bold; margin-top: 8px; }
+  .sello { display: inline-block; background: #7a0000; color: #fff; padding: 10px 16px; border-radius: 10px; font-weight: bold; margin-top: 8px; }
+  .ocr { background: #e8f0fe; border: 2px solid #0b57d0; border-radius: 10px; padding: 10px 16px; margin: 10px 0 4px; }
+  .tabla { width: 100%; border-collapse: collapse; margin: 12px 0; }
+  .tabla th, .tabla td { border: 2px solid #111; padding: 8px 10px; text-align: left; font-size: 18px; }
+  .visor { position: fixed; inset: 0; background: rgba(12,12,12,.96); display: none; overflow-y: auto; padding: 16px; z-index: 100; }
+  .visor:target { display: block; }
+  .visor img { display: block; max-width: 100%; margin: 12px auto; background: #fff; }
+  .vtitulo { color: #fff; text-align: center; font-size: 19px; margin: 10px 0; }
+  .cerrar { display: inline-block; background: #d93025; color: #fff; text-decoration: none; padding: 12px 22px; border-radius: 10px; font-size: 20px; font-weight: bold; position: sticky; top: 8px; }
+  footer { margin: 46px 0 24px; color: #333; font-size: 17px; border-top: 2px solid #111; padding-top: 12px; }
+</style>
+</head>
+<body>
+
+<h1>🏘️ Memoria y Cuenta · Comunidad Residencial</h1>
+<p>Gestión: febrero 2024 – mayo 2026.</p>
+<p>Informe público de ingresos y gastos.</p>
+
+<nav>
+  <a href="#inicio">Inicio</a>
+  <a href="#ingresos">Ingresos</a>
+  <a href="#gastos">Gastos</a>
+</nav>
+
+<h2 id="inicio">📊 Balance consolidado</h2>
+<div class="resumen">
+  <p>Ingresos percibidos: <strong>$2.400,00</strong></p>
+  <p>Gastos ejecutados: <strong>$2.305,50</strong></p>
+  <p>Disponible en caja al <span id="fechaHoy">día de hoy</span>: <strong>$94,50</strong></p>
+</div>
+<p>Queda por cobrar a propietarios morosos: $50,00.</p>
+<p>Si se cobra esa mora, la caja quedaría en $144,50.</p>
+
+<h2 id="ingresos">✅ INGRESOS PERCIBIDOS DURANTE LA GESTIÓN</h2>
+<div class="resumen">
+  <p>Esperado en el período (28 meses): <strong>$2.450,00</strong></p>
+  <p>Percibido: <strong>$2.400,00</strong></p>
+  <p>Por cobrar: <strong>$50,00</strong></p>
+</div>
+<p>Son 10 propietarios con cuota mensual de $5,00.</p>
+<p>Cuotas especiales: $55,00 por propietario en 2024 ("pulmón") y $50,00 en 2026 ("bomba").</p>
+<p>Detalle mes a mes: ✅ pagado · ❌ pendiente.</p>
+
+<div class="prop">
+  <p><strong>1. Casa Ingrid (Representante)</strong> · Solvente.</p>
+  <p>2024 (feb–dic): ✅✅✅✅✅✅✅✅✅✅✅</p>
+  <p>2025 (ene–dic): ✅✅✅✅✅✅✅✅✅✅✅✅</p>
+  <p>2026 (ene–may): ✅✅✅✅✅</p>
+  <p>Especiales: 2024 ✅ $55,00 · 2026 ✅ $50,00.</p>
+  <p>Ingreso neto: <strong>$245,00</strong>.</p>
+</div>
+
+<div class="prop">
+  <p><strong>2. Nayleth</strong> · Solvente.</p>
+  <p>2024 (feb–dic): ✅✅✅✅✅✅✅✅✅✅✅</p>
+  <p>2025 (ene–dic): ✅✅✅✅✅✅✅✅✅✅✅✅</p>
+  <p>2026 (ene–may): ✅✅✅✅✅</p>
+  <p>Especiales: 2024 ✅ $55,00 · 2026 ✅ $50,00.</p>
+  <p>Ingreso neto: <strong>$245,00</strong>.</p>
+</div>
+
+<div class="prop">
+  <p><strong>3. Dami (Marielbi)</strong> · ❌ Debe $30,00.</p>
+  <p>2024 (feb–dic): ✅✅✅✅✅✅✅✅✅✅✅</p>
+  <p>2025 (ene–dic): ✅✅✅✅✅✅✅✅✅✅✅❌ (dic).</p>
+  <p>2026 (ene–may): ❌❌❌❌❌.</p>
+  <p>Especiales: 2024 ✅ $55,00 · 2026 ✅ $50,00.</p>
+  <p>Ingreso neto: <strong>$215,00</strong>.</p>
+</div>
+
+<div class="prop">
+  <p><strong>4. Neyda</strong> · Solvente.</p>
+  <p>2024 (feb–dic): ✅✅✅✅✅✅✅✅✅✅✅</p>
+  <p>2025 (ene–dic): ✅✅✅✅✅✅✅✅✅✅✅✅</p>
+  <p>2026 (ene–may): ✅✅✅✅✅</p>
+  <p>Especiales: 2024 ✅ $55,00 · 2026 ✅ $50,00.</p>
+  <p>Ingreso neto: <strong>$245,00</strong>.</p>
+</div>
+
+<div class="prop">
+  <p><strong>5. Indhira</strong> · ❌ Debe $15,00.</p>
+  <p>2024 (feb–dic): ✅✅✅✅✅✅✅✅✅✅✅</p>
+  <p>2025 (ene–dic): ✅✅✅✅✅✅✅✅✅✅✅✅</p>
+  <p>2026 (ene–may): ✅✅❌❌ (mar–may).</p>
+  <p>Especiales: 2024 ✅ $55,00 · 2026 ✅ $50,00.</p>
+  <p>Ingreso neto: <strong>$230,00</strong>.</p>
+</div>
+
+<div class="prop">
+  <p><strong>6. Karina</strong> · Solvente.</p>
+  <p>2024 (feb–dic): ✅✅✅✅✅✅✅✅✅✅✅</p>
+  <p>2025 (ene–dic): ✅✅✅✅✅✅✅✅✅✅✅✅</p>
+  <p>2026 (ene–may): ✅✅✅✅✅</p>
+  <p>Especiales: 2024 ✅ $55,00 · 2026 ✅ $50,00.</p>
+  <p>Ingreso neto: <strong>$245,00</strong>.</p>
+</div>
+
+<div class="prop">
+  <p><strong>7. Vicente</strong> · Solvente.</p>
+  <p>2024 (feb–dic): ✅✅✅✅✅✅✅✅✅✅✅</p>
+  <p>2025 (ene–dic): ✅✅✅✅✅✅✅✅✅✅✅✅</p>
+  <p>2026 (ene–may): ✅✅✅✅✅</p>
+  <p>Especiales: 2024 ✅ $55,00 · 2026 ✅ $50,00.</p>
+  <p>Ingreso neto: <strong>$245,00</strong>.</p>
+</div>
+
+<div class="prop">
+  <p><strong>8. Yenny</strong> · ❌ Debe $5,00.</p>
+  <p>2024 (feb–dic): ✅✅✅✅✅✅✅✅✅✅✅</p>
+  <p>2025 (ene–dic): ✅✅✅✅✅✅✅✅✅✅✅✅</p>
+  <p>2026 (ene–may): ✅✅✅✅❌ (may).</p>
+  <p>Especiales: 2024 ✅ $55,00 · 2026 ✅ $50,00.</p>
+  <p>Ingreso neto: <strong>$240,00</strong>.</p>
+</div>
+
+<div class="prop">
+  <p><strong>9. Judith</strong> · Solvente.</p>
+  <p>2024 (feb–dic): ✅✅✅✅✅✅✅✅✅✅✅</p>
+  <p>2025 (ene–dic): ✅✅✅✅✅✅✅✅✅✅✅✅</p>
+  <p>2026 (ene–may): ✅✅✅✅✅</p>
+  <p>Especiales: 2024 ✅ $55,00 · 2026 ✅ $50,00.</p>
+  <p>Ingreso neto: <strong>$245,00</strong>.</p>
+</div>
+
+<div class="prop">
+  <p><strong>10. Emperatriz</strong> · Solvente.</p>
+  <p>2024 (feb–dic): ✅✅✅✅✅✅✅✅✅✅✅</p>
+  <p>2025 (ene–dic): ✅✅✅✅✅✅✅✅✅✅✅✅</p>
+  <p>2026 (ene–may): ✅✅✅✅✅</p>
+  <p>Especiales: 2024 ✅ $55,00 · 2026 ✅ $50,00.</p>
+  <p>Ingreso neto: <strong>$245,00</strong>.</p>
+</div>
+
+<h3>💰 Ingreso neto por propietario</h3>
+<table class="tabla">
+  <tr><th>Propietario</th><th>Ingreso neto</th></tr>
+  <tr><td>Casa Ingrid</td><td>$245,00</td></tr>
+  <tr><td>Nayleth</td><td>$245,00</td></tr>
+  <tr><td>Dami (Marielbi)</td><td>$215,00</td></tr>
+  <tr><td>Neyda</td><td>$245,00</td></tr>
+  <tr><td>Indhira</td><td>$230,00</td></tr>
+  <tr><td>Karina</td><td>$245,00</td></tr>
+  <tr><td>Vicente</td><td>$245,00</td></tr>
+  <tr><td>Yenny</td><td>$240,00</td></tr>
+  <tr><td>Judith</td><td>$245,00</td></tr>
+  <tr><td>Emperatriz</td><td>$245,00</td></tr>
+  <tr><td><strong>TOTAL PERCIBIDO</strong></td><td><strong>$2.400,00</strong></td></tr>
+</table>
+
+<h3>📌 Cuentas por cobrar al cierre</h3>
+<p>Dami (Marielbi): dic/2025 + ene–may/2026 = <strong>$30,00</strong>.</p>
+<p>Indhira: mar–may/2026 = <strong>$15,00</strong>.</p>
+<p>Yenny: may/2026 = <strong>$5,00</strong>.</p>
+<p>Total por cobrar: <strong>$50,00</strong>. Los demás propietarios están solventes.</p>
+
+<h2 id="gastos">🧾 GASTOS DE LA GESTIÓN (24 ítems)</h2>
+<div class="resumen">
+  <p>Total ejecutado: <strong>$2.305,50</strong>.</p>
+  <p>Ítems con respaldo documental: <strong>20 de 24</strong>.</p>
+  <p>Ítems sin respaldo: <strong>4</strong> (01, 12, 17 y 19).</p>
+</div>
+<p>Cada ítem muestra su fecha, su costo y su detalle.</p>
+<p>El botón 📄 abre la foto de la factura a pantalla completa.</p>
+<p>El botón ✕ cierra la foto y te regresa al ítem.</p>
+
+<div class="anio">— 2024 —</div>
+
+<div class="item" id="i01">
+  <h3>Ítem 01 · Limpieza áreas comunes + poda</h3>
+  <p>📅 Fecha: sin fecha (2024).</p>
+  <p>💵 Costo: <strong>$50,00</strong>.</p>
+  <p>📝 Detalle: familiar del Sr. Vicente, sin registro fiscal.</p>
+  <p><span class="sello">❌ Sin respaldo documental</span></p>
+</div>
+
+<div class="item" id="i02">
+  <h3>Ítem 02 · Reparación tubo succión bomba</h3>
+  <p>📅 Fecha: 27/07/2024.</p>
+  <p>💵 Costo: <strong>$8,50</strong>.</p>
+  <p>📝 Detalle: nuevos accesorios y válvulas check.</p>
+  <div class="ocr">
+    <p>📄 Datos de la factura:</p>
+    <p>Proveedor: ilegible.</p>
+    <p>RIF: ilegible.</p>
+    <p>N° factura: …19359.</p>
+    <p>N° control: Z7C7023126 (dígito dudoso).</p>
+    <p>Fecha en factura: ilegible (hora 17:56).</p>
+    <p>Ítems: Bs 152,26 + Bs 73,57.</p>
+    <p>Subtotal: Bs 225,83 · IVA: Bs 36,13.</p>
+    <p>Total: Bs 261,96 · Forma de pago: ilegible.</p>
+  </div>
+  <p>📷 Evidencia: 1 foto.</p>
+  <a class="btn" href="#v02">📄 Ver factura</a>
+</div>
+
+<div class="item" id="i03">
+  <h3>Ítem 03 · Reparación pulmón hidroneumático</h3>
+  <p>📅 Fecha: 31/10/2024.</p>
+  <p>💵 Costo: <strong>$7,00</strong>.</p>
+  <p>📝 Detalle: huecos en base con pega 2 toneladas + bombillo lavandero.</p>
+  <div class="ocr">
+    <p>📄 Datos de la factura:</p>
+    <p>Proveedor: parece "…ultiMax".</p>
+    <p>RIF: ilegible.</p>
+    <p>N° factura: ilegible.</p>
+    <p>N° control: ilegible.</p>
+    <p>Fecha en factura: 31/10/2024.</p>
+    <p>Ítems: 2 ilegibles (uno dice "BOMB…").</p>
+    <p>Subtotal: ilegible · IVA: ilegible.</p>
+    <p>Total: Bs 271,07 · Forma de pago: POS DEB.</p>
+  </div>
+  <p>📷 Evidencia: 1 foto.</p>
+  <a class="btn" href="#v03">📄 Ver factura</a>
+</div>
+
+<div class="item" id="i04">
+  <h3>Ítem 04 · 7 socates porcelana, teipe, 2 fotoceldas</h3>
+  <p>📅 Fecha: 04/11/2024.</p>
+  <p>💵 Costo: <strong>$30,00</strong>.</p>
+  <p>📝 Detalle: restauración del sistema de luminarias completo.</p>
+  <div class="ocr">
+    <p>📄 Datos de la factura:</p>
+    <p>Proveedor: FERRO CERAMICA VALERO C.A.</p>
+    <p>RIF: J-309746098.</p>
+    <p>N° factura: 00028209.</p>
+    <p>N° control: Z7C7023104.</p>
+    <p>Fecha en factura: 04/11/2024 11:43.</p>
+    <p>Ítems: 2× teipe 3/4" Bs 102,00 · 5× socate E27 c/cable Bs 85,70 · socate E27 mod 13A Bs 20,57 · 2× fotocelda 16A Bs 901,78.</p>
+    <p>Subtotal: Bs 1.110,05 · IVA: Bs 177,61.</p>
+    <p>Total: Bs 1.287,66 · Forma de pago: CHEQUE 3.</p>
+  </div>
+  <p>📷 Evidencia: 1 foto.</p>
+  <a class="btn" href="#v04">📄 Ver factura</a>
+</div>
+
+<div class="anio">— 2025 —</div>
+
+<div class="item" id="i05">
+  <h3>Ítem 05 · Lámpara LED exterior portón interno</h3>
+  <p>📅 Fecha: 13/02/2025.</p>
+  <p>💵 Costo: <strong>$14,00</strong>.</p>
+  <p>📝 Detalle: reflector interno, estacionamiento lado portón.</p>
+  <p>📷 Evidencia: 1 foto.</p>
+  <a class="btn" href="#v05">📄 Ver factura</a>
+</div>
+
+<div class="item" id="i06">
+  <h3>Ítem 06 · Presostato Pedrollo 20-40</h3>
+  <p>📅 Fecha: 26/02/2025.</p>
+  <p>💵 Costo: <strong>$22,00</strong>.</p>
+  <p>📝 Detalle: sustitución del presostato hidroneumático.</p>
+  <p>📷 Evidencia: 1 foto.</p>
+  <a class="btn" href="#v06">📄 Ver factura</a>
+</div>
+
+<div class="item" id="i07">
+  <h3>Ítem 07 · Limpieza + rep + cloración tanque 12.000L</h3>
+  <p>📅 Fecha: 19/05/2025.</p>
+  <p>💵 Costo: <strong>$120,00</strong>.</p>
+  <p>📝 Detalle: 3 días de trabajo, hidrolavadora, válvula de pie, cloro por 3 semanas.</p>
+  <p>📷 Evidencia: 1 foto.</p>
+  <a class="btn" href="#v07">📄 Ver factura</a>
+</div>
+
+<div class="item" id="i08">
+  <h3>Ítem 08 · Limpieza + poda</h3>
+  <p>📅 Fecha: 08/06/2025.</p>
+  <p>💵 Costo: <strong>$60,00</strong>.</p>
+  <p>📝 Detalle: familiar del Sr. Vicente; desmalezado, escombros, poda del limonero.</p>
+  <p>📷 Evidencia: 1 foto.</p>
+  <a class="btn" href="#v08">📄 Ver factura</a>
+</div>
+
+<div class="item" id="i09">
+  <h3>Ítem 09 · Veneno maleza cuneta + estacionamiento</h3>
+  <p>📅 Fecha: 07/07/2025.</p>
+  <p>💵 Costo: <strong>$20,00</strong>.</p>
+  <p>📝 Detalle: administrado por el Sr. Vicente.</p>
+  <p>📷 Evidencia: 1 foto.</p>
+  <a class="btn" href="#v09">📄 Ver factura</a>
+</div>
+
+<div class="item" id="i10">
+  <h3>Ítem 10 · Pastillas cloro 20 semanas</h3>
+  <p>📅 Fecha: 01/09/2025.</p>
+  <p>💵 Costo: <strong>$10,00</strong>.</p>
+  <p>📝 Detalle: repuesto del tanque principal, tipo cápsula.</p>
+  <p>📷 Evidencia: 1 foto.</p>
+  <a class="btn" href="#v10">📄 Ver factura</a>
+</div>
+
+<div class="item" id="i11">
+  <h3>Ítem 11 · Pega 2 toneladas tanque hidroneumático</h3>
+  <p>📅 Fecha: 27/09/2025.</p>
+  <p>💵 Costo: <strong>$6,00</strong>.</p>
+  <p>📝 Detalle: reparación del pulmón.</p>
+  <p>📷 Evidencia: 4 fotos.</p>
+  <a class="btn" href="#v11">📄 Ver evidencias</a>
+</div>
+
+<div class="item" id="i12">
+  <h3>Ítem 12 · Pintura spray tanque hidroneumático</h3>
+  <p>📅 Fecha: 27/09/2025.</p>
+  <p>💵 Costo: <strong>$3,00</strong>.</p>
+  <p>📝 Detalle: esmalte anti-oxidación tras lijado.</p>
+  <p><span class="sello">❌ Sin respaldo documental</span></p>
+</div>
+
+<div class="item" id="i13">
+  <h3>Ítem 13 · Pulmón hidroneumático tanque 6mm</h3>
+  <p>📅 Fecha: 14/11/2025.</p>
+  <p>💵 Costo: <strong>$1.100,00</strong>.</p>
+  <p>📝 Detalle: Rey del Tanque; escotilla y lámina 6mm tras 4 presupuestos.</p>
+  <p>📷 Evidencia: 2 fotos.</p>
+  <a class="btn" href="#v13">📄 Ver evidencias</a>
+</div>
+
+<div class="item" id="i14">
+  <h3>Ítem 14 · Reparación cerradura principal</h3>
+  <p>📅 Fecha: 11/12/2025.</p>
+  <p>💵 Costo: <strong>$7,00</strong>.</p>
+  <p>📝 Detalle: cilindro reparado por cerrajero.</p>
+  <p>📷 Evidencia: 1 foto.</p>
+  <a class="btn" href="#v14">📄 Ver factura</a>
+</div>
+
+<div class="anio">— 2026 —</div>
+
+<div class="item" id="i15">
+  <h3>Ítem 15 · Bombillos + accesorios flotante</h3>
+  <p>📅 Fecha: 18/02/2026.</p>
+  <p>💵 Costo: <strong>$20,00</strong>.</p>
+  <p>📝 Detalle: flotante del tanque + bombillos de pasillos.</p>
+  <p>📷 Evidencia: 1 foto.</p>
+  <a class="btn" href="#v15">📄 Ver factura</a>
+</div>
+
+<div class="item" id="i16">
+  <h3>Ítem 16 · Flotante tanque principal</h3>
+  <p>📅 Fecha: 23/02/2026.</p>
+  <p>💵 Costo: <strong>$17,00</strong>.</p>
+  <p>📝 Detalle: solo flotante, sin bola.</p>
+  <p>📷 Evidencia: 1 foto.</p>
+  <a class="btn" href="#v16">📄 Ver factura</a>
+</div>
+
+<div class="item" id="i17">
+  <h3>Ítem 17 · Impresión 3 informes (36 págs)</h3>
+  <p>📅 Fecha: 27/02/2026.</p>
+  <p>💵 Costo: <strong>$7,00</strong>.</p>
+  <p>📝 Detalle: reclamo ante la alcaldía de San Diego.</p>
+  <p><span class="sello">❌ Sin respaldo documental</span></p>
+</div>
+
+<div class="item" id="i18">
+  <h3>Ítem 18 · Reparación bomba CPm660 + montaje pulmón</h3>
+  <p>📅 Fecha: 16/03/2026.</p>
+  <p>💵 Costo: <strong>$163,00</strong>.</p>
+  <p>📝 Detalle: procura, desmontaje y reparación de la bomba.</p>
+  <p>📷 Evidencia: 5 fotos.</p>
+  <a class="btn" href="#v18">📄 Ver evidencias</a>
+</div>
+
+<div class="item" id="i19">
+  <h3>Ítem 19 · Pastillas cloro 40 semanas</h3>
+  <p>📅 Fecha: 18/03/2026.</p>
+  <p>💵 Costo: <strong>$20,00</strong>.</p>
+  <p>📝 Detalle: inventario de reposición.</p>
+  <p><span class="sello">❌ Sin respaldo documental</span></p>
+</div>
+
+<div class="item" id="i20">
+  <h3>Ítem 20 · Válvula salida 1"</h3>
+  <p>📅 Fecha: 19/03/2026.</p>
+  <p>💵 Costo: <strong>$38,00</strong>.</p>
+  <p>📝 Detalle: control de flujo a la residencia.</p>
+  <p>📷 Evidencia: 1 foto.</p>
+  <a class="btn" href="#v20">📄 Ver factura</a>
+</div>
+
+<div class="item" id="i21">
+  <h3>Ítem 21 · Válvula check pie bomba 1 1/2"</h3>
+  <p>📅 Fecha: 27/03/2026.</p>
+  <p>💵 Costo: <strong>$33,00</strong>.</p>
+  <p>📝 Detalle: tanque de 12.000L.</p>
+  <p>📷 Evidencia: 1 foto.</p>
+  <a class="btn" href="#v21">📄 Ver factura</a>
+</div>
+
+<div class="item" id="i22">
+  <h3>Ítem 22 · Reparación tubo succión bomba 1 1/2"</h3>
+  <p>📅 Fecha: 20/05/2026.</p>
+  <p>💵 Costo: <strong>$30,00</strong>.</p>
+  <p>📝 Detalle: mano de obra + accesorio.</p>
+  <p>📷 Evidencia: 1 foto.</p>
+  <a class="btn" href="#v22">📄 Ver factura</a>
+</div>
+
+<div class="item" id="i23">
+  <h3>Ítem 23 · Reparación hidroneumático</h3>
+  <p>📅 Fecha: 08/09/2026.</p>
+  <p>💵 Costo: <strong>$20,00</strong>.</p>
+  <p>📝 Detalle: tubería de entrada del pulmón, materiales y mano de obra.</p>
+  <p>📷 Evidencia: 1 foto.</p>
+  <a class="btn" href="#v23">📄 Ver factura</a>
+</div>
+
+<div class="item" id="i24">
+  <h3>Ítem 24 · Compra bomba respaldo</h3>
+  <p>📅 Fecha: sin fecha.</p>
+  <p>💵 Costo: <strong>$500,00</strong>.</p>
+  <p>📝 Detalle: bomba original de respaldo.</p>
+  <p>📷 Evidencia: 1 foto.</p>
+  <a class="btn" href="#v24">📄 Ver factura</a>
+</div>
+
+<div class="visor" id="v02">
+  <a class="cerrar" href="#i02">✕ Cerrar y volver</a>
+  <p class="vtitulo">Ítem 02 · Reparación tubo succión bomba</p>
+  <img src="2.jpeg" alt="Factura del ítem 02">
+</div>
+
+<div class="visor" id="v03">
+  <a class="cerrar" href="#i03">✕ Cerrar y volver</a>
+  <p class="vtitulo">Ítem 03 · Reparación pulmón hidroneumático</p>
+  <img src="3.jpeg" alt="Factura del ítem 03">
+</div>
+
+<div class="visor" id="v04">
+  <a class="cerrar" href="#i04">✕ Cerrar y volver</a>
+  <p class="vtitulo">Ítem 04 · Socates, teipe y fotoceldas</p>
+  <img src="4.jpeg" alt="Factura del ítem 04">
+</div>
+
+<div class="visor" id="v05">
+  <a class="cerrar" href="#i05">✕ Cerrar y volver</a>
+  <p class="vtitulo">Ítem 05 · Lámpara LED exterior portón interno</p>
+  <img src="5.jpeg" alt="Factura del ítem 05">
+</div>
+
+<div class="visor" id="v06">
+  <a class="cerrar" href="#i06">✕ Cerrar y volver</a>
+  <p class="vtitulo">Ítem 06 · Presostato Pedrollo 20-40</p>
+  <img src="6.jpeg" alt="Factura del ítem 06">
+</div>
+
+<div class="visor" id="v07">
+  <a class="cerrar" href="#i07">✕ Cerrar y volver</a>
+  <p class="vtitulo">Ítem 07 · Limpieza y cloración tanque 12.000L</p>
+  <img src="7.jpeg" alt="Evidencia del ítem 07">
+</div>
+
+<div class="visor" id="v08">
+  <a class="cerrar" href="#i08">✕ Cerrar y volver</a>
+  <p class="vtitulo">Ítem 08 · Limpieza + poda</p>
+  <img src="8.jpeg" alt="Factura del ítem 08">
+</div>
+
+<div class="visor" id="v09">
+  <a class="cerrar" href="#i09">✕ Cerrar y volver</a>
+  <p class="vtitulo">Ítem 09 · Veneno maleza cuneta + estacionamiento</p>
+  <img src="9.jpeg" alt="Factura del ítem 09">
+</div>
+
+<div class="visor" id="v10">
+  <a class="cerrar" href="#i10">✕ Cerrar y volver</a>
+  <p class="vtitulo">Ítem 10 · Pastillas cloro 20 semanas</p>
+  <img src="10.jpeg" alt="Factura del ítem 10">
+</div>
+
+<div class="visor" id="v11">
+  <a class="cerrar" href="#i11">✕ Cerrar y volver</a>
+  <p class="vtitulo">Ítem 11 · Pega 2 toneladas (4 evidencias)</p>
+  <img src="11.jpeg" alt="Evidencia 1 del ítem 11">
+  <img src="11.1.jpeg" alt="Evidencia 2 del ítem 11">
+  <img src="11.2.jpeg" alt="Evidencia 3 del ítem 11">
+  <img src="11.4.jpeg" alt="Evidencia 4 del ítem 11">
+</div>
+
+<div class="visor" id="v13">
+  <a class="cerrar" href="#i13">✕ Cerrar y volver</a>
+  <p class="vtitulo">Ítem 13 · Pulmón hidroneumático tanque 6mm (2 evidencias)</p>
+  <img src="13.jpeg" alt="Evidencia 1 del ítem 13">
+  <img src="13.1.jpeg" alt="Evidencia 2 del ítem 13">
+</div>
+
+<div class="visor" id="v14">
+  <a class="cerrar" href="#i14">✕ Cerrar y volver</a>
+  <p class="vtitulo">Ítem 14 · Reparación cerradura principal</p>
+  <img src="14.jpeg" alt="Factura del ítem 14">
+</div>
+
+<div class="visor" id="v15">
+  <a class="cerrar" href="#i15">✕ Cerrar y volver</a>
+  <p class="vtitulo">Ítem 15 · Bombillos + accesorios flotante</p>
+  <img src="15.jpeg" alt="Factura del ítem 15">
+</div>
+
+<div class="visor" id="v16">
+  <a class="cerrar" href="#i16">✕ Cerrar y volver</a>
+  <p class="vtitulo">Ítem 16 · Flotante tanque principal</p>
+  <img src="16.jpeg" alt="Factura del ítem 16">
+</div>
+
+<div class="visor" id="v18">
+  <a class="cerrar" href="#i18">✕ Cerrar y volver</a>
+  <p class="vtitulo">Ítem 18 · Reparación bomba CPm660 (5 evidencias)</p>
+  <img src="18.jpeg" alt="Evidencia 1 del ítem 18">
+  <img src="18.1.jpeg" alt="Evidencia 2 del ítem 18">
+  <img src="18.2.jpeg" alt="Evidencia 3 del ítem 18">
+  <img src="18.4.jpeg" alt="Evidencia 4 del ítem 18">
+  <img src="18.5.jpeg" alt="Evidencia 5 del ítem 18">
+</div>
+
+<div class="visor" id="v20">
+  <a class="cerrar" href="#i20">✕ Cerrar y volver</a>
+  <p class="vtitulo">Ítem 20 · Válvula salida 1"</p>
+  <img src="20.jpeg" alt="Factura del ítem 20">
+</div>
+
+<div class="visor" id="v21">
+  <a class="cerrar" href="#i21">✕ Cerrar y volver</a>
+  <p class="vtitulo">Ítem 21 · Válvula check pie bomba 1 1/2"</p>
+  <img src="21.jpeg" alt="Factura del ítem 21">
+</div>
+
+<div class="visor" id="v22">
+  <a class="cerrar" href="#i22">✕ Cerrar y volver</a>
+  <p class="vtitulo">Ítem 22 · Reparación tubo succión bomba 1 1/2"</p>
+  <img src="22.jpeg" alt="Factura del ítem 22">
+</div>
+
+<div class="visor" id="v23">
+  <a class="cerrar" href="#i23">✕ Cerrar y volver</a>
+  <p class="vtitulo">Ítem 23 · Reparación hidroneumático</p>
+  <img src="23.jpeg" alt="Factura del ítem 23">
+</div>
+
+<div class="visor" id="v24">
+  <a class="cerrar" href="#i24">✕ Cerrar y volver</a>
+  <p class="vtitulo">Ítem 24 · Compra bomba respaldo</p>
+  <img src="24.jpeg" alt="Evidencia del ítem 24">
+</div>
+
+<footer>
+  <p>Documento público presentado a la comunidad.</p>
+  <p>Las fechas y montos corresponden a los respaldos mostrados.</p>
+</footer>
+
+<script>
+  document.getElementById('fechaHoy').textContent = new Date().toLocaleDateString('es-VE', { day: '2-digit', month: 'long', year: 'numeric' });
+</script>
+</body>
+</html>
