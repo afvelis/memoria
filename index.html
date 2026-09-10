@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Memoria y Cuenta · Comunidad Residencial</title>
+<title>Memoria y Cuenta · Comunidad Residencial Gran Saman</title>
 <style>
   body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; font-size: 18px; line-height: 1.6; color: #111; background: #fff; margin: 0 auto; padding: 16px; max-width: 780px; }
   h1 { font-size: 27px; line-height: 1.3; margin: 10px 0 4px; }
@@ -17,7 +17,7 @@
   .anio { text-align: center; font-size: 21px; font-weight: bold; color: #444; letter-spacing: 3px; margin: 30px 0 8px; }
   .item, .prop { border: 2px solid #111; border-radius: 12px; padding: 14px 18px; margin: 16px 0; background: #fafafa; }
   .btn { display: inline-block; background: #0b57d0; color: #fff; text-decoration: none; padding: 12px 18px; border-radius: 10px; font-size: 18px; font-weight: bold; margin-top: 8px; }
-  .sello { display: inline-block; background: #7a0000; color: #fff; padding: 10px 16px; border-radius: 10px; font-weight: bold; margin-top: 8px; }
+  .btn-off { display: inline-block; background: #9e9e9e; color: #fff; padding: 12px 18px; border-radius: 10px; font-size: 18px; font-weight: bold; margin-top: 8px; cursor: not-allowed; }
   .ocr { background: #e8f0fe; border: 2px solid #0b57d0; border-radius: 10px; padding: 10px 16px; margin: 10px 0 4px; }
   .tabla { width: 100%; border-collapse: collapse; margin: 12px 0; }
   .tabla th, .tabla td { border: 2px solid #111; padding: 8px 10px; text-align: left; font-size: 18px; }
@@ -31,7 +31,7 @@
 </head>
 <body>
 
-<h1>🏘️ Memoria y Cuenta · Comunidad Residencial</h1>
+<h1>🏘️ Memoria y Cuenta · Comunidad Residencial Gran Saman</h1>
 <p>Gestión: febrero 2024 – mayo 2026.</p>
 <p>Informe público de ingresos y gastos.</p>
 
@@ -43,21 +43,22 @@
 
 <h2 id="inicio">📊 Balance consolidado</h2>
 <div class="resumen">
-  <p>Ingresos percibidos: <strong>$2.400,00</strong></p>
+  <p>Ingresos percibidos (cuotas + chatarra): <strong>$2.415,00</strong></p>
   <p>Gastos ejecutados: <strong>$2.305,50</strong></p>
-  <p>Disponible en caja al <span id="fechaHoy">día de hoy</span>: <strong>$94,50</strong></p>
+  <p>Disponible en caja al <span id="fechaHoy">día de hoy</span>: <strong>$109,50</strong></p>
 </div>
 <p>Queda por cobrar a propietarios morosos: $50,00.</p>
-<p>Si se cobra esa mora, la caja quedaría en $144,50.</p>
+<p>Si se cobra esa mora, la caja quedaría en $159,50.</p>
 
 <h2 id="ingresos">✅ INGRESOS PERCIBIDOS DURANTE LA GESTIÓN</h2>
 <div class="resumen">
   <p>Esperado en el período (28 meses): <strong>$2.450,00</strong></p>
-  <p>Percibido: <strong>$2.400,00</strong></p>
+  <p>Percibido por cuotas: <strong>$2.400,00</strong></p>
   <p>Por cobrar: <strong>$50,00</strong></p>
 </div>
 <p>Son 10 propietarios con cuota mensual de $5,00.</p>
 <p>Cuotas especiales: $55,00 por propietario en 2024 ("pulmón") y $50,00 en 2026 ("bomba").</p>
+<p>➕ Ingreso adicional: venta de chatarra: <strong>$15,00</strong>.</p>
 <p>Detalle mes a mes: ✅ pagado · ❌ pendiente.</p>
 
 <div class="prop">
@@ -82,7 +83,7 @@
   <p><strong>3. Dami (Marielbi)</strong> · ❌ Debe $30,00.</p>
   <p>2024 (feb–dic): ✅✅✅✅✅✅✅✅✅✅✅</p>
   <p>2025 (ene–dic): ✅✅✅✅✅✅✅✅✅✅✅❌ (dic).</p>
-  <p>2026 (ene–may): ❌❌❌❌❌.</p>
+  <p>2026 (ene–may): ❌❌❌❌.</p>
   <p>Especiales: 2024 ✅ $55,00 · 2026 ✅ $50,00.</p>
   <p>Ingreso neto: <strong>$215,00</strong>.</p>
 </div>
@@ -163,8 +164,9 @@
   <tr><td>Yenny</td><td>$240,00</td></tr>
   <tr><td>Judith</td><td>$245,00</td></tr>
   <tr><td>Emperatriz</td><td>$245,00</td></tr>
-  <tr><td><strong>TOTAL PERCIBIDO</strong></td><td><strong>$2.400,00</strong></td></tr>
+  <tr><td><strong>TOTAL CUOTAS PERCIBIDAS</strong></td><td><strong>$2.400,00</strong></td></tr>
 </table>
+<p>La venta de chatarra ($15,00) es un ingreso comunitario, no por propietario.</p>
 
 <h3>📌 Cuentas por cobrar al cierre</h3>
 <p>Dami (Marielbi): dic/2025 + ene–may/2026 = <strong>$30,00</strong>.</p>
@@ -175,11 +177,11 @@
 <h2 id="gastos">🧾 GASTOS DE LA GESTIÓN (24 ítems)</h2>
 <div class="resumen">
   <p>Total ejecutado: <strong>$2.305,50</strong>.</p>
-  <p>Ítems con respaldo documental: <strong>20 de 24</strong>.</p>
-  <p>Ítems sin respaldo: <strong>4</strong> (01, 12, 17 y 19).</p>
+  <p>Ítems con respaldo documental: <strong>21 de 24</strong>.</p>
+  <p>Ítems sin respaldo: <strong>3</strong> (01, 12 y 17).</p>
 </div>
 <p>Cada ítem muestra su fecha, su costo y su detalle.</p>
-<p>El botón 📄 abre la foto de la factura a pantalla completa.</p>
+<p>El botón 📷 Evidencia abre la foto a pantalla completa.</p>
 <p>El botón ✕ cierra la foto y te regresa al ítem.</p>
 
 <div class="anio">— 2024 —</div>
@@ -189,7 +191,7 @@
   <p>📅 Fecha: sin fecha (2024).</p>
   <p>💵 Costo: <strong>$50,00</strong>.</p>
   <p>📝 Detalle: familiar del Sr. Vicente, sin registro fiscal.</p>
-  <p><span class="sello">❌ Sin respaldo documental</span></p>
+  <p><span class="btn-off">📷 Evidencia</span></p>
 </div>
 
 <div class="item" id="i02">
@@ -198,18 +200,16 @@
   <p>💵 Costo: <strong>$8,50</strong>.</p>
   <p>📝 Detalle: nuevos accesorios y válvulas check.</p>
   <div class="ocr">
-    <p>📄 Datos de la factura:</p>
-    <p>Proveedor: ilegible.</p>
-    <p>RIF: ilegible.</p>
+    <p>📄 Datos legibles de la factura:</p>
     <p>N° factura: …19359.</p>
     <p>N° control: Z7C7023126 (dígito dudoso).</p>
-    <p>Fecha en factura: ilegible (hora 17:56).</p>
+    <p>Hora en factura: 17:56.</p>
     <p>Ítems: Bs 152,26 + Bs 73,57.</p>
     <p>Subtotal: Bs 225,83 · IVA: Bs 36,13.</p>
-    <p>Total: Bs 261,96 · Forma de pago: ilegible.</p>
+    <p>Total: Bs 261,96.</p>
   </div>
   <p>📷 Evidencia: 1 foto.</p>
-  <a class="btn" href="#v02">📄 Ver factura</a>
+  <a class="btn" href="#v02">📷 Evidencia</a>
 </div>
 
 <div class="item" id="i03">
@@ -218,18 +218,14 @@
   <p>💵 Costo: <strong>$7,00</strong>.</p>
   <p>📝 Detalle: huecos en base con pega 2 toneladas + bombillo lavandero.</p>
   <div class="ocr">
-    <p>📄 Datos de la factura:</p>
-    <p>Proveedor: parece "…ultiMax".</p>
-    <p>RIF: ilegible.</p>
-    <p>N° factura: ilegible.</p>
-    <p>N° control: ilegible.</p>
+    <p>📄 Datos legibles de la factura:</p>
+    <p>Proveedor (parcial): …ultiMax.</p>
     <p>Fecha en factura: 31/10/2024.</p>
-    <p>Ítems: 2 ilegibles (uno dice "BOMB…").</p>
-    <p>Subtotal: ilegible · IVA: ilegible.</p>
-    <p>Total: Bs 271,07 · Forma de pago: POS DEB.</p>
+    <p>Total: Bs 271,07.</p>
+    <p>Forma de pago: POS DEB.</p>
   </div>
   <p>📷 Evidencia: 1 foto.</p>
-  <a class="btn" href="#v03">📄 Ver factura</a>
+  <a class="btn" href="#v03">📷 Evidencia</a>
 </div>
 
 <div class="item" id="i04">
@@ -249,7 +245,7 @@
     <p>Total: Bs 1.287,66 · Forma de pago: CHEQUE 3.</p>
   </div>
   <p>📷 Evidencia: 1 foto.</p>
-  <a class="btn" href="#v04">📄 Ver factura</a>
+  <a class="btn" href="#v04">📷 Evidencia</a>
 </div>
 
 <div class="anio">— 2025 —</div>
@@ -260,7 +256,7 @@
   <p>💵 Costo: <strong>$14,00</strong>.</p>
   <p>📝 Detalle: reflector interno, estacionamiento lado portón.</p>
   <p>📷 Evidencia: 1 foto.</p>
-  <a class="btn" href="#v05">📄 Ver factura</a>
+  <a class="btn" href="#v05">📷 Evidencia</a>
 </div>
 
 <div class="item" id="i06">
@@ -269,7 +265,7 @@
   <p>💵 Costo: <strong>$22,00</strong>.</p>
   <p>📝 Detalle: sustitución del presostato hidroneumático.</p>
   <p>📷 Evidencia: 1 foto.</p>
-  <a class="btn" href="#v06">📄 Ver factura</a>
+  <a class="btn" href="#v06">📷 Evidencia</a>
 </div>
 
 <div class="item" id="i07">
@@ -278,7 +274,7 @@
   <p>💵 Costo: <strong>$120,00</strong>.</p>
   <p>📝 Detalle: 3 días de trabajo, hidrolavadora, válvula de pie, cloro por 3 semanas.</p>
   <p>📷 Evidencia: 1 foto.</p>
-  <a class="btn" href="#v07">📄 Ver factura</a>
+  <a class="btn" href="#v07">📷 Evidencia</a>
 </div>
 
 <div class="item" id="i08">
@@ -287,7 +283,7 @@
   <p>💵 Costo: <strong>$60,00</strong>.</p>
   <p>📝 Detalle: familiar del Sr. Vicente; desmalezado, escombros, poda del limonero.</p>
   <p>📷 Evidencia: 1 foto.</p>
-  <a class="btn" href="#v08">📄 Ver factura</a>
+  <a class="btn" href="#v08">📷 Evidencia</a>
 </div>
 
 <div class="item" id="i09">
@@ -296,7 +292,7 @@
   <p>💵 Costo: <strong>$20,00</strong>.</p>
   <p>📝 Detalle: administrado por el Sr. Vicente.</p>
   <p>📷 Evidencia: 1 foto.</p>
-  <a class="btn" href="#v09">📄 Ver factura</a>
+  <a class="btn" href="#v09">📷 Evidencia</a>
 </div>
 
 <div class="item" id="i10">
@@ -305,7 +301,7 @@
   <p>💵 Costo: <strong>$10,00</strong>.</p>
   <p>📝 Detalle: repuesto del tanque principal, tipo cápsula.</p>
   <p>📷 Evidencia: 1 foto.</p>
-  <a class="btn" href="#v10">📄 Ver factura</a>
+  <a class="btn" href="#v10">📷 Evidencia</a>
 </div>
 
 <div class="item" id="i11">
@@ -314,7 +310,7 @@
   <p>💵 Costo: <strong>$6,00</strong>.</p>
   <p>📝 Detalle: reparación del pulmón.</p>
   <p>📷 Evidencia: 4 fotos.</p>
-  <a class="btn" href="#v11">📄 Ver evidencias</a>
+  <a class="btn" href="#v11">📷 Evidencia</a>
 </div>
 
 <div class="item" id="i12">
@@ -322,7 +318,7 @@
   <p>📅 Fecha: 27/09/2025.</p>
   <p>💵 Costo: <strong>$3,00</strong>.</p>
   <p>📝 Detalle: esmalte anti-oxidación tras lijado.</p>
-  <p><span class="sello">❌ Sin respaldo documental</span></p>
+  <p><span class="btn-off">📷 Evidencia</span></p>
 </div>
 
 <div class="item" id="i13">
@@ -331,7 +327,7 @@
   <p>💵 Costo: <strong>$1.100,00</strong>.</p>
   <p>📝 Detalle: Rey del Tanque; escotilla y lámina 6mm tras 4 presupuestos.</p>
   <p>📷 Evidencia: 2 fotos.</p>
-  <a class="btn" href="#v13">📄 Ver evidencias</a>
+  <a class="btn" href="#v13">📷 Evidencia</a>
 </div>
 
 <div class="item" id="i14">
@@ -340,7 +336,7 @@
   <p>💵 Costo: <strong>$7,00</strong>.</p>
   <p>📝 Detalle: cilindro reparado por cerrajero.</p>
   <p>📷 Evidencia: 1 foto.</p>
-  <a class="btn" href="#v14">📄 Ver factura</a>
+  <a class="btn" href="#v14">📷 Evidencia</a>
 </div>
 
 <div class="anio">— 2026 —</div>
@@ -351,7 +347,7 @@
   <p>💵 Costo: <strong>$20,00</strong>.</p>
   <p>📝 Detalle: flotante del tanque + bombillos de pasillos.</p>
   <p>📷 Evidencia: 1 foto.</p>
-  <a class="btn" href="#v15">📄 Ver factura</a>
+  <a class="btn" href="#v15">📷 Evidencia</a>
 </div>
 
 <div class="item" id="i16">
@@ -360,7 +356,7 @@
   <p>💵 Costo: <strong>$17,00</strong>.</p>
   <p>📝 Detalle: solo flotante, sin bola.</p>
   <p>📷 Evidencia: 1 foto.</p>
-  <a class="btn" href="#v16">📄 Ver factura</a>
+  <a class="btn" href="#v16">📷 Evidencia</a>
 </div>
 
 <div class="item" id="i17">
@@ -368,7 +364,7 @@
   <p>📅 Fecha: 27/02/2026.</p>
   <p>💵 Costo: <strong>$7,00</strong>.</p>
   <p>📝 Detalle: reclamo ante la alcaldía de San Diego.</p>
-  <p><span class="sello">❌ Sin respaldo documental</span></p>
+  <p><span class="btn-off">📷 Evidencia</span></p>
 </div>
 
 <div class="item" id="i18">
@@ -377,7 +373,7 @@
   <p>💵 Costo: <strong>$163,00</strong>.</p>
   <p>📝 Detalle: procura, desmontaje y reparación de la bomba.</p>
   <p>📷 Evidencia: 5 fotos.</p>
-  <a class="btn" href="#v18">📄 Ver evidencias</a>
+  <a class="btn" href="#v18">📷 Evidencia</a>
 </div>
 
 <div class="item" id="i19">
@@ -385,7 +381,8 @@
   <p>📅 Fecha: 18/03/2026.</p>
   <p>💵 Costo: <strong>$20,00</strong>.</p>
   <p>📝 Detalle: inventario de reposición.</p>
-  <p><span class="sello">❌ Sin respaldo documental</span></p>
+  <p>📷 Evidencia: 1 foto (la misma del ítem 10).</p>
+  <a class="btn" href="#v19">📷 Evidencia</a>
 </div>
 
 <div class="item" id="i20">
@@ -394,7 +391,7 @@
   <p>💵 Costo: <strong>$38,00</strong>.</p>
   <p>📝 Detalle: control de flujo a la residencia.</p>
   <p>📷 Evidencia: 1 foto.</p>
-  <a class="btn" href="#v20">📄 Ver factura</a>
+  <a class="btn" href="#v20">📷 Evidencia</a>
 </div>
 
 <div class="item" id="i21">
@@ -403,7 +400,7 @@
   <p>💵 Costo: <strong>$33,00</strong>.</p>
   <p>📝 Detalle: tanque de 12.000L.</p>
   <p>📷 Evidencia: 1 foto.</p>
-  <a class="btn" href="#v21">📄 Ver factura</a>
+  <a class="btn" href="#v21">📷 Evidencia</a>
 </div>
 
 <div class="item" id="i22">
@@ -412,7 +409,7 @@
   <p>💵 Costo: <strong>$30,00</strong>.</p>
   <p>📝 Detalle: mano de obra + accesorio.</p>
   <p>📷 Evidencia: 1 foto.</p>
-  <a class="btn" href="#v22">📄 Ver factura</a>
+  <a class="btn" href="#v22">📷 Evidencia</a>
 </div>
 
 <div class="item" id="i23">
@@ -421,7 +418,7 @@
   <p>💵 Costo: <strong>$20,00</strong>.</p>
   <p>📝 Detalle: tubería de entrada del pulmón, materiales y mano de obra.</p>
   <p>📷 Evidencia: 1 foto.</p>
-  <a class="btn" href="#v23">📄 Ver factura</a>
+  <a class="btn" href="#v23">📷 Evidencia</a>
 </div>
 
 <div class="item" id="i24">
@@ -430,7 +427,7 @@
   <p>💵 Costo: <strong>$500,00</strong>.</p>
   <p>📝 Detalle: bomba original de respaldo.</p>
   <p>📷 Evidencia: 1 foto.</p>
-  <a class="btn" href="#v24">📄 Ver factura</a>
+  <a class="btn" href="#v24">📷 Evidencia</a>
 </div>
 
 <div class="visor" id="v02">
@@ -531,6 +528,12 @@
   <img src="18.5.jpeg" alt="Evidencia 5 del ítem 18">
 </div>
 
+<div class="visor" id="v19">
+  <a class="cerrar" href="#i19">✕ Cerrar y volver</a>
+  <p class="vtitulo">Ítem 19 · Pastillas cloro 40 semanas (evidencia compartida con ítem 10)</p>
+  <img src="10.jpeg" alt="Factura del ítem 19, compartida con ítem 10">
+</div>
+
 <div class="visor" id="v20">
   <a class="cerrar" href="#i20">✕ Cerrar y volver</a>
   <p class="vtitulo">Ítem 20 · Válvula salida 1"</p>
@@ -562,7 +565,7 @@
 </div>
 
 <footer>
-  <p>Documento público presentado a la comunidad.</p>
+  <p>Documento público de la Comunidad Residencial Gran Saman.</p>
   <p>Las fechas y montos corresponden a los respaldos mostrados.</p>
 </footer>
 
