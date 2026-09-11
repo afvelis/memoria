@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proyectos de Mantenimiento - El Gran Samán</title>
+<style>
+  :root {
+    --primary: #0d6e6e;
+    --primary-dark: #084c4c;
+    --accent: #f4a261;
+    --bg: #f5f7fa;
+    --card: #ffffff;
+    --text: #1f2d3d;
+    --muted: #5a6b7c;
+    --border: #e1e8ed;
+    --success: #2a9d8f;
+    --warning: #e76f51;
+    --info: #264653;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    padding: 20px;
+  }
+  .container { max-width: 1200px; margin: 0 auto; }
+
+  /* HEADER */
+  header {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: white;
+    padding: 40px 30px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  }
+  header h1 { font-size: 2.2rem; margin-bottom: 10px; }
+  header .subtitle { opacity: 0.9; font-size: 1.05rem; }
+  header .meta {
+    margin-top: 15px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    font-size: 0.9rem;
+    opacity: 0.85;
+  }
+
+  /* RESUMEN */
+  .summary {
+    background: var(--card);
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    border-left: 5px solid var(--accent);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+  .summary h2 { color: var(--primary); margin-bottom: 12px; }
+  .summary p { color: var(--muted); }
+
+  /* GRID DE PROYECTOS */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+  }
+  .project-card {
+    background: var(--card);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+  }
+  .project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  }
+  .card-header {
+    padding: 20px;
+    color: white;
+    position: relative;
+  }
+  .card-header .number {
+    font-size: 3rem;
+    font-weight: bold;
+    opacity: 0.25;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+  }
+  .card-header h3 { font-size: 1.2rem; margin-bottom: 5px; }
+  .card-header .category {
+    display: inline-block;
+    background: rgba(255,255,255,0.25);
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    margin-top: 5px;
+  }
+
+  /* Colores por categoría */
+  .cat-infraestructura { background: linear-gradient(135deg, #264653, #2a9d8f); }
+  .cat-servicios { background: linear-gradient(135deg, #0d6e6e, #118ab2); }
+  .cat-estética { background: linear-gradient(135deg, #e76f51, #f4a261); }
+  .cat-salud { background: linear-gradient(135deg, #6a994e, #a7c957); }
+  .cat-seguridad { background: linear-gradient(135deg, #5a189a, #9d4edd); }
+
+  .card-body { padding: 20px; flex-grow: 1; }
+  .card-body h4 {
+    color: var(--primary);
+    font-size: 0.95rem;
+    margin: 12px 0 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 4px;
+  }
+  .card-body p, .card-body ul { font-size: 0.92rem; color: var(--text); }
+  .card-body ul { padding-left: 20px; }
+  .card-body li { margin-bottom: 4px; }
+
+  .materials {
+    background: #f8f9fb;
+    padding: 10px 12px;
+    border-radius: 6px;
+    font-size: 0.88rem;
+    color: var(--muted);
+    border-left: 3px solid var(--accent);
+  }
+
+  /* VOTACIÓN */
+  .vote-section {
+    background: #eef5f5;
+    padding: 15px 20px;
+    border-top: 1px dashed var(--border);
+  }
+  .vote-section h4 {
+    color: var(--primary-dark);
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+  }
+  .vote-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    font-size: 0.88rem;
+  }
+  .vote-row label { color: var(--text); font-weight: 500; }
+  .vote-row select, .vote-row input {
+    padding: 5px 8px;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    background: white;
+    font-size: 0.85rem;
+  }
+
+  /* TABLA RESUMEN */
+  .summary-table {
+    background: var(--card);
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    overflow-x: auto;
+  }
+  .summary-table h2 { color: var(--primary); margin-bottom: 15px; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+  }
+  th {
+    background: var(--primary);
+    color: white;
+    padding: 12px;
+    text-align: left;
+  }
+  td {
+    padding: 12px;
+    border-bottom: 1px solid var(--border);
+  }
+  tr:hover td { background: #f8f9fb; }
+
+  /* CRITERIOS */
+  .criteria {
+    background: var(--card);
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+  .criteria h2 { color: var(--primary); margin-bottom: 15px; }
+  .criteria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+  }
+  .criterion {
+    background: #f8f9fb;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 4px solid var(--accent);
+  }
+  .criterion strong { color: var(--primary-dark); display: block; margin-bottom: 5px; }
+  .criterion span { font-size: 0.88rem; color: var(--muted); }
+
+  /* FOOTER */
+  footer {
+    text-align: center;
+    padding: 20px;
+    color: var(--muted);
+    font-size: 0.85rem;
+    border-top: 1px solid var(--border);
+    margin-top: 30px;
+  }
+
+  @media (max-width: 600px) {
+    header h1 { font-size: 1.6rem; }
+    .card-header .number { font-size: 2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- ENCABEZADO -->
+  <header>
+    <h1>🌳 Plan de Proyectos — El Gran Samán</h1>
+    <p class="subtitle">Documento de valoración y priorización de obras de mantenimiento, mejora e infraestructura</p>
+    <div class="meta">
+      <span>📅 Fecha: 07 de septiembre de 2026</span>
+      <span>📋 Total de proyectos: 6</span>
+      <span>🗳️ Modalidad: Votación por prioridad y presupuesto</span>
+    </div>
+  </header>
+
+  <!-- RESUMEN EJECUTIVO -->
+  <section class="summary">
+    <h2>📌 Resumen Ejecutivo</h2>
+    <p>
+      El presente documento reúne los <strong>seis (6) proyectos pendientes de ejecución</strong> identificados
+      para la propiedad <em>El Gran Samán</em>. Cada proyecto ha sido descrito con sus materiales,
+      alcance y propósito, de modo que los copropietarios puedan analizarlos de forma individual,
+      valorarlos según criterios de <strong>urgencia, impacto, costo y factibilidad</strong>, y
+      finalmente votar para definir el orden de ejecución conforme a la disponibilidad presupuestaria.
+    </p>
+  </section>
+
+  <!-- CRITERIOS DE EVALUACIÓN -->
+  <section class="criteria">
+    <h2>🎯 Criterios de Valoración</h2>
+    <p style="color: var(--muted); margin-bottom: 15px;">
+      Se sugiere evaluar cada proyecto según los siguientes criterios antes de la votación final:
+    </p>
+    <div class="criteria-grid">
+      <div class="criterion">
+        <strong>1. Urgencia</strong>
+        <span>¿Qué tan crítico es ejecutarlo de inmediato para evitar daños mayores o interrupciones del servicio?</span>
+      </div>
+      <div class="criterion">
+        <strong>2. Impacto colectivo</strong>
+        <span>¿A cuántos propietarios beneficia y en qué medida mejora la calidad de vida común?</span>
+      </div>
+      <div class="criterion">
+        <strong>3. Costo estimado</strong>
+        <span>¿Cuál es la inversión requerida en materiales, mano de obra y tiempos?</span>
+      </div>
+      <div class="criterion">
+        <strong>4. Factibilidad técnica</strong>
+        <span>¿Existen las condiciones para ejecutarlo sin complicaciones mayores?</span>
+      </div>
+      <div class="criterion">
+        <strong>5. Prevención de riesgos</strong>
+        <span>¿Evita fallas futuras, pérdidas de agua, daños estructurales o problemas de salud?</span>
+      </div>
+      <div class="criterion">
+        <strong>6. Sostenibilidad</strong>
+        <span>¿Contribuye al ahorro de recursos (agua, energía) o al mantenimiento a largo plazo?</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROYECTOS -->
+  <h2 style="color: var(--primary); margin-bottom: 20px;">📂 Detalle de Proyectos</h2>
+  <div class="projects-grid">
+
+    <!-- PROYECTO 1 -->
+    <article class="project-card">
+      <div class="card-header cat-servicios">
+        <span class="number">01</span>
+        <h3>Automatización del Hidroneumático</h3>
+        <span class="category">Servicios Básicos · Agua</span>
+      </div>
+      <div class="card-body">
+        <h4>📝 Descripción</h4>
+        <p>Instalación de un sistema automático de protección para el hidroneumático mediante sensor de nivel (sapito) y válvula motorizada con retorno por resorte.</p>
+
+        <h4>🛠️ Materiales requeridos</h4>
+        <div class="materials">
+          Sensor de nivel (sapito) + cable · Válvula de bola motorizada 1" normalmente cerrada con retorno por resorte (30-60 psi, 220V) · Protector 220V para válvula · Cargador de aire para pulmón de 200 galones.
+        </div>
+
+        <h4>🎯 Propósito</h4>
+        <ul>
+          <li>Cortar automáticamente la señal a la bomba y cerrar la válvula si el tanque baja a nivel crítico.</li>
+          <li>Ante un corte de energía, la válvula se cierra automáticamente evitando pérdida de ceba.</li>
+          <li>Impedir que la bomba arranque sin ceba, prolongando su vida útil.</li>
+        </ul>
+
+        <div class="vote-section">
+          <h4>🗳️ Valoración</h4>
+          <div class="vote-row">
+            <label>Prioridad:</label>
+            <select><option>1 - Crítica</option><option>2 - Alta</option><option>3 - Media</option><option>4 - Baja</option><option>5 - Postergable</option></select>
+          </div>
+          <div class="vote-row">
+            <label>Presupuesto estimado (USD):</label>
+            <input type="number" placeholder="0.00">
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- PROYECTO 2 -->
+    <article class="project-card">
+      <div class="card-header cat-servicios">
+        <span class="number">02</span>
+        <h3>Instalación de Bombas en Paralelo</h3>
+        <span class="category">Servicios Básicos · Redundancia</span>
+      </div>
+      <div class="card-body">
+        <h4>📝 Descripción</h4>
+        <p>Montaje de dos bombas (una nueva y una usada) en configuración paralela para alternar su uso y contar con respaldo inmediato.</p>
+
+        <h4>🛠️ Materiales requeridos</h4>
+        <div class="materials">
+          Protector 220V · Cableado · Accesorios de tubería · 3 válvulas de 1".
+        </div>
+
+        <h4>🎯 Propósito</h4>
+        <ul>
+          <li>Alternar el uso de las bombas para equilibrar el desgaste.</li>
+          <li>Garantizar respaldo inmediato ante falla de una de ellas.</li>
+          <li>Mantener el suministro de agua continuo incluso durante mantenimiento o fallas.</li>
+        </ul>
+
+        <div class="vote-section">
+          <h4>🗳️ Valoración</h4>
+          <div class="vote-row">
+            <label>Prioridad:</label>
+            <select><option>1 - Crítica</option><option>2 - Alta</option><option>3 - Media</option><option>4 - Baja</option><option>5 - Postergable</option></select>
+          </div>
+          <div class="vote-row">
+            <label>Presupuesto estimado (USD):</label>
+            <input type="number" placeholder="0.00">
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- PROYECTO 3 -->
+    <article class="project-card">
+      <div class="card-header cat-estética">
+        <span class="number">03</span>
+        <h3>Acondicionamiento del Lavandero</h3>
+        <span class="category">Estética · Uso Común</span>
+      </div>
+      <div class="card-body">
+        <h4>📝 Descripción</h4>
+        <p>Remodelación integral del área del lavandero: friso, revestimiento, delimitación de áreas por propietario, instalación de batea, puertas, iluminación y tendederos.</p>
+
+        <h4>🛠️ Materiales requeridos</h4>
+        <div class="materials">
+          Cemento · Arena · Baldosas · Batea de cemento · Electrodos · Tubos 2x1 · Bisagras · Cerradura embutida · Bombillo con fotocelda · Líneas de tendedero · Pintura.
+        </div>
+
+        <h4>🎯 Propósito</h4>
+        <ul>
+          <li>Restaurar paredes (incluyendo pared colindante con la empresa).</li>
+          <li>Revestir con baldosas y delimitar áreas por propietario.</li>
+          <li>Reparar tuberías, instalar batea con sifón y puertas con cerradura.</li>
+          <li>Reparar filtración del techo, rejilla de tanquilla y habilitar almacenamiento.</li>
+          <li>Instalar iluminación automática e iluminación del área de tendedero.</li>
+        </ul>
+
+        <div class="vote-section">
+          <h4>🗳️ Valoración</h4>
+          <div class="vote-row">
+            <label>Prioridad:</label>
+            <select><option>1 - Crítica</option><option>2 - Alta</option><option>3 - Media</option><option>4 - Baja</option><option>5 - Postergable</option></select>
+          </div>
+          <div class="vote-row">
+            <label>Presupuesto estimado (USD):</label>
+            <input type="number" placeholder="0.00">
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- PROYECTO 4 -->
+    <article class="project-card">
+      <div class="card-header cat-seguridad">
+        <span class="number">04</span>
+        <h3>Alumbrado del Estacionamiento</h3>
+        <span class="category">Seguridad · Iluminación</span>
+      </div>
+      <div class="card-body">
+        <h4>📝 Descripción</h4>
+        <p>Restauración del sistema de iluminación exterior de la residencia y áreas de estacionamiento.</p>
+
+        <h4>🛠️ Materiales requeridos</h4>
+        <div class="materials">
+          4 luminarias LED · 1 reflector · Bombillo · 3 fotoceldas · Cableado · Ramplug · Tornillería.
+        </div>
+
+        <h4>🎯 Propósito</h4>
+        <ul>
+          <li>Recuperar la iluminación en espacios exteriores y estacionamiento.</li>
+          <li>Mejorar la seguridad nocturna de residentes y vehículos.</li>
+          <li>Reducir el consumo eléctrico con tecnología LED y fotoceldas automáticas.</li>
+        </ul>
+
+        <div class="vote-section">
+          <h4>🗳️ Valoración</h4>
+          <div class="vote-row">
+            <label>Prioridad:</label>
+            <select><option>1 - Crítica</option><option>2 - Alta</option><option>3 - Media</option><option>4 - Baja</option><option>5 - Postergable</option></select>
+          </div>
+          <div class="vote-row">
+            <label>Presupuesto estimado (USD):</label>
+            <input type="number" placeholder="0.00">
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- PROYECTO 5 -->
+    <article class="project-card">
+      <div class="card-header cat-estética">
+        <span class="number">05</span>
+        <h3>Pintura de Reja Principal y Portón</h3>
+        <span class="category">Estética · Seguridad Perimetral</span>
+      </div>
+      <div class="card-body">
+        <h4>📝 Descripción</h4>
+        <p>Mantenimiento preventivo y correctivo de las puertas principales y portón, incluyendo lija, sellador anticorrosivo y pintura de esmalte negro.</p>
+
+        <h4>🛠️ Materiales requeridos</h4>
+        <div class="materials">
+          Lijas · Brochas · Sellador anticorrosivo · Esmalte negro · Mantenimiento de candado.
+        </div>
+
+        <h4>🎯 Propósito</h4>
+        <ul>
+          <li>Proteger las estructuras metálicas contra la corrosión.</li>
+          <li>Mejorar la imagen exterior de la propiedad.</li>
+          <li>Garantizar el correcto funcionamiento del cierre y candado.</li>
+        </ul>
+
+        <div class="vote-section">
+          <h4>🗳️ Valoración</h4>
+          <div class="vote-row">
+            <label>Prioridad:</label>
+            <select><option>1 - Crítica</option><option>2 - Alta</option><option>3 - Media</option><option>4 - Baja</option><option>5 - Postergable</option></select>
+          </div>
+          <div class="vote-row">
+            <label>Presupuesto estimado (USD):</label>
+            <input type="number" placeholder="0.00">
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- PROYECTO 6 -->
+    <article class="project-card">
+      <div class="card-header cat-salud">
+        <span class="number">06</span>
+        <h3>Mantenimiento del Tanque de Agua + Cloración</h3>
+        <span class="category">Salud · Agua Potable</span>
+      </div>
+      <div class="card-body">
+        <h4>📝 Descripción</h4>
+        <p>Mantenimiento integral del tanque interno: limpieza, reparación, pintura grado alimenticio, instalación de dispensador de cloro, flotador moderno y línea de aliviadero.</p>
+
+        <h4>🛠️ Materiales requeridos</h4>
+        <div class="materials">
+          Dispensador de cloro · Pintura epóxica grado alimenticio · Esmalte para tapa · Sika (reparación de huecos) · Condenación de manguera del pozo de la empresa · Tanquilla de acceso · Línea de aliviadero · Flotador moderno por contacto.
+        </div>
+
+        <h4>🎯 Propósito</h4>
+        <ul>
+          <li>Garantizar la calidad del agua para consumo humano.</li>
+          <li>Reparar filtraciones y huecos del tanque.</li>
+          <li>Construir tanquilla de acceso y línea de aliviadero.</li>
+          <li>Modernizar el sistema de control de nivel con flotador por contacto.</li>
+          <li>Asegurar cloración continua para prevenir contaminaciones.</li>
+        </ul>
+
+        <div class="vote-section">
+          <h4>🗳️ Valoración</h4>
+          <div class="vote-row">
+            <label>Prioridad:</label>
+            <select><option>1 - Crítica</option><option>2 - Alta</option><option>3 - Media</option><option>4 - Baja</option><option>5 - Postergable</option></select>
+          </div>
+          <div class="vote-row">
+            <label>Presupuesto estimado (USD):</label>
+            <input type="number" placeholder="0.00">
+          </div>
+        </div>
+      </div>
+    </article>
+
+  </div>
+
+  <!-- TABLA COMPARATIVA -->
+  <section class="summary-table">
+    <h2>📊 Cuadro Comparativo de Proyectos</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Proyecto</th>
+          <th>Categoría</th>
+          <th>Impacto Principal</th>
+          <th>Urgencia Sugerida</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>Automatización Hidroneumático</td><td>Servicios</td><td>Protección de bomba y suministro</td><td>Alta</td></tr>
+        <tr><td>2</td><td>Bombas en Paralelo</td><td>Servicios</td><td>Redundancia y continuidad</td><td>Alta</td></tr>
+        <tr><td>3</td><td>Acondicionamiento Lavandero</td><td>Estética / Uso común</td><td>Mejora de espacio compartido</td><td>Media</td></tr>
+        <tr><td>4</td><td>Alumbrado Estacionamiento</td><td>Seguridad</td><td>Seguridad nocturna</td><td>Media-Alta</td></tr>
+        <tr><td>5</td><td>Pintura Reja y Portón</td><td>Estética / Perímetro</td><td>Protección anticorrosiva</td><td>Media</td></tr>
+        <tr><td>6</td><td>Mantenimiento Tanque + Cloración</td><td>Salud</td><td>Calidad de agua potable</td><td>Crítica</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>📄 Documento generado para el proceso de valoración y votación de proyectos — El Gran Samán</p>
+    <p>Esta plantilla puede reutilizarse para futuras consultas de priorización presupuestaria.</p>
+  </footer>
+
+</div>
+</body>
+</html>
